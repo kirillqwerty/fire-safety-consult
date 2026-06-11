@@ -9,7 +9,7 @@
   const year = document.getElementById("year");
 
   const siteConfig = {
-    phone: "+375290000000",
+    phone: "+375291371216",
     email: "info@osbez.by",
     telegramBotEndpoint: "",
   };
@@ -47,7 +47,7 @@
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 1240) {
+      if (window.innerWidth > 1340) {
         closeMobileNav();
       }
     });
@@ -88,6 +88,7 @@
       type === "callback"
         ? "Заказать обратный звонок"
         : "Заказать консультацию";
+
     modalForm.formType.value =
       type === "callback" ? "callback" : "consultation";
 
@@ -110,6 +111,7 @@
 
   function closeModal() {
     if (!modal) return;
+
     modal.classList.remove("show", "callback", "consultation");
     modal.setAttribute("aria-hidden", "true");
     body.classList.remove("modal-open");
@@ -135,6 +137,7 @@
     button.addEventListener("click", function () {
       const item = button.closest(".faq-item");
       if (!item) return;
+
       item.classList.toggle("active");
     });
   });
@@ -146,25 +149,39 @@
     requiredFields.forEach(function (field) {
       const value = field.value.trim();
       const fieldValid = value.length > 0;
+
       field.classList.toggle("error", !fieldValid);
-      if (!fieldValid) isValid = false;
+
+      if (!fieldValid) {
+        isValid = false;
+      }
     });
 
     const emailField = form.querySelector('input[type="email"]');
+
     if (emailField && emailField.value.trim()) {
       const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
         emailField.value.trim(),
       );
+
       emailField.classList.toggle("error", !emailValid);
-      if (!emailValid) isValid = false;
+
+      if (!emailValid) {
+        isValid = false;
+      }
     }
 
     const phoneField = form.querySelector('input[type="tel"]');
+
     if (phoneField && phoneField.value.trim()) {
       const digits = phoneField.value.replace(/\D/g, "");
       const phoneValid = digits.length >= 9;
+
       phoneField.classList.toggle("error", !phoneValid);
-      if (!phoneValid) isValid = false;
+
+      if (!phoneValid) {
+        isValid = false;
+      }
     }
 
     return isValid;
@@ -172,6 +189,7 @@
 
   function collectFormData(form) {
     const data = new FormData(form);
+
     return {
       formType: data.get("formType") || "contact",
       company: data.get("company") || "",
@@ -186,7 +204,9 @@
 
   function setStatus(form, type, text) {
     const status = form.querySelector(".form-status");
+
     if (!status) return;
+
     status.className = "form-status " + type;
     status.textContent = text;
   }
@@ -201,6 +221,7 @@
           "error",
           "Проверьте обязательные поля и попробуйте еще раз.",
         );
+
         return;
       }
 
@@ -223,6 +244,7 @@
         "success",
         "Спасибо! Мы свяжемся с вами в ближайшее время.",
       );
+
       form.reset();
 
       if (form === modalForm) {
@@ -235,6 +257,7 @@
   if (contactForm) handleSubmit(contactForm);
 
   const revealItems = document.querySelectorAll(".reveal");
+
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       function (entries) {
