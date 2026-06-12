@@ -3,72 +3,148 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ось безопасности — пожарная безопасность для бизнеса в РБ</title>
+    <title>Радиус безопасности — пожарная безопасность для бизнеса в РБ</title>
     <meta
       name="description"
-      content="Ось безопасности: аутсорсинг пожарной безопасности, разработка документов, планы эвакуации, обучение, расчет огнетушителей и пожарной категории помещений для организаций в Республике Беларусь."
+      content="Радиус безопасности: аутсорсинг пожарной безопасности, разработка документов, планы эвакуации, обучение, расчет огнетушителей и пожарной категории помещений для организаций в Республике Беларусь."
     />
     <meta
       name="keywords"
-      content="Ось безопасности, пожарная безопасность, аутсорсинг пожарной безопасности, документы пожарной безопасности, план эвакуации, расчет пожарной категории, огнетушители, Беларусь, Минск"
+      content="Радиус безопасности, пожарная безопасность, аутсорсинг пожарной безопасности, документы пожарной безопасности, план эвакуации, расчет пожарной категории, огнетушители, Беларусь, Минск"
     />
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/favicon.ico" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header" id="top">
-      <div class="container header-inner">
-        <a class="logo" href="#top" data-scroll-top aria-label="На главную">
-          <span class="logo-mark" aria-hidden="true">
-            <img src="assets/logo-os-bezopasnosti.png" alt="" />
-          </span>
-          <span>
-            <strong>Ось безопасности</strong>
-            <small>Пожарная безопасность</small>
-          </span>
-        </a>
+      <div class="header-top">
+        <div class="container header-top-inner">
+          <button
+            class="burger"
+            type="button"
+            aria-label="Открыть меню"
+            aria-controls="mainNav"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
 
-        <div class="header-menu" id="mainNav">
-          <nav class="main-nav" aria-label="Основная навигация">
-            <a href="#services">Услуги</a>
-            <a href="#outsourcing">Аутсорсинг</a>
-            <a href="#documents">Документы</a>
-            <a href="#about">О компании</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contacts">Контакты</a>
-          </nav>
+          <a class="logo" href="#top" data-scroll-top aria-label="На главную">
+            <img
+              class="logo-img"
+              src="assets/logo-radius-security.png"
+              alt="Радиус безопасности"
+            />
+          </a>
 
-          <div class="header-info" aria-label="Информация о компании">
-            <span>8:30–19:00</span>
-            <a href="mailto:info@osbez.by">info@osbez.by</a>
-            <span>г. Минск, ул. Каменногорская, 6</span>
+          <div class="header-main-info" aria-label="Информация о компании">
+            <a class="header-contact" href="mailto:info@osbez.by">
+              <span class="header-contact-icon" aria-hidden="true">✉</span>
+              <span>
+                <small>Email</small>
+                <b>info@osbez.by</b>
+              </span>
+            </a>
+            <div class="header-contact header-contact-address">
+              <span class="header-contact-icon" aria-hidden="true">📍</span>
+              <span>
+                <small>Адрес и график</small>
+                <b>г. Минск, ул. Каменногорская, 6 · ПН-ПТ: 8:30–19:00</b>
+              </span>
+            </div>
           </div>
 
-          <div class="header-actions">
-            <a class="phone-link" href="tel:+375291371216">
-              +375 (29) 137-12-16
+          <div class="header-phones header-phones-desktop" aria-label="Телефон">
+            <span class="messenger-icons" aria-hidden="true">☏ ☎</span>
+            <a class="phone-link" href="tel:+375291371216"
+              >+375 (29) 137-12-16</a
+            >
+          </div>
+
+          <div class="header-cta-stack header-cta-desktop">
+            <button
+              class="btn btn-primary btn-header"
+              type="button"
+              data-modal="callback"
+            >
+              Заказать звонок
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-bottom">
+        <div class="container header-bottom-inner header-menu" id="mainNav">
+          <nav class="main-nav" aria-label="Основная навигация">
+            <a class="active" href="#top" data-scroll-top
+              ><span class="nav-icon" aria-hidden="true">⌂</span>Главная</a
+            >
+            <a href="#services"
+              ><span class="nav-icon" aria-hidden="true">✕</span>Наши услуги</a
+            >
+            <a href="#outsourcing"
+              ><span class="nav-icon" aria-hidden="true">●</span>Аутсорсинг</a
+            >
+            <a href="#documents"
+              ><span class="nav-icon" aria-hidden="true">▣</span>Документы</a
+            >
+            <a href="#certificates"
+              ><span class="nav-icon" aria-hidden="true">▤</span>Сертификаты</a
+            >
+            <a href="#faq"
+              ><span class="nav-icon" aria-hidden="true">?</span>Вопрос-ответ</a
+            >
+            <a href="#about"
+              ><span class="nav-icon" aria-hidden="true">i</span>О компании</a
+            >
+            <a href="#contacts"
+              ><span class="nav-icon" aria-hidden="true">▦</span>Контакты</a
+            >
+          </nav>
+
+          <div class="mobile-header-details" aria-label="Информация о компании">
+            <a class="header-contact" href="mailto:info@osbez.by">
+              <span class="header-contact-icon" aria-hidden="true">✉</span>
+              <span>
+                <small>Email</small>
+                <b>info@osbez.by</b>
+              </span>
             </a>
+            <div class="header-contact">
+              <span class="header-contact-icon" aria-hidden="true">📍</span>
+              <span>
+                <small>Адрес</small>
+                <b>г. Минск, ул. Каменногорская, 6</b>
+              </span>
+            </div>
+            <div class="header-contact">
+              <span class="header-contact-icon" aria-hidden="true">⏱</span>
+              <span>
+                <small>График работы</small>
+                <b>ПН-ПТ: 8:30–19:00</b>
+              </span>
+            </div>
+          </div>
+
+          <div class="mobile-header-actions">
+            <a class="phone-link" href="tel:+375291371216"
+              >+375 (29) 137-12-16</a
+            >
+            <button class="btn btn-primary" type="button" data-modal="callback">
+              Заказать звонок
+            </button>
             <button
               class="btn btn-primary"
               type="button"
               data-modal="consultation"
+              data-service="Бесплатный аудит"
             >
-              Заказать консультацию
+              Бесплатный аудит
             </button>
           </div>
         </div>
-
-        <button
-          class="burger"
-          type="button"
-          aria-label="Открыть меню"
-          aria-controls="mainNav"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
     </header>
 
@@ -84,7 +160,7 @@
                 Аутсорсинг пожарной безопасности
               </p>
               <h1>
-                <span class="hero-company">ООО «Ось безопасности»</span>
+                <span class="hero-company">ООО «Радиус безопасности»</span>
                 <span class="hero-title-accent">
                   Комплекс услуг по пожарной безопасности
                 </span>
@@ -313,10 +389,11 @@
                 <p>Вы занимаетесь бизнесом — мы безопасностью.</p>
               </article>
               <article>
-                <h3>Реальная безопасность</h3>
+                <h3>Железная уверенность</h3>
                 <p>
-                  Уровень защиты объекта вырастает за счет работы профильных
-                  экспертов.
+                  Устраним любые нарушения пожарной безопасности строго по
+                  закону и в срок. Гарантируем прохождение проверок без
+                  финансовых потерь и нервов.
                 </p>
               </article>
               <article>
@@ -331,13 +408,6 @@
                 <p>
                   Своевременно находим и устраняем скрытые угрозы до того, как
                   они станут проблемой.
-                </p>
-              </article>
-              <article>
-                <h3>Железная уверенность</h3>
-                <p>
-                  Все обязательные мероприятия выполняются строго в срок и по
-                  закону.
                 </p>
               </article>
             </div>
@@ -386,9 +456,13 @@
                 работоспособности пожарно-технической комиссии.
               </li>
               <li>
-                Итоговый перечень документов корректируется на основании анализа
-                объекта и требований актуального законодательства РБ.
+                Система подготовки работников в области пожарной безопасности
               </li>
+              <span
+                >*Итоговый перечень документов корректируется на основании
+                анализа объекта и требований актуального законодательства
+                РБ.</span
+              >
             </ul>
           </div>
         </div>
@@ -403,7 +477,7 @@
             <p class="eyebrow">О компании</p>
             <h2>Профессиональное сопровождение по пожарной безопасности</h2>
             <p>
-              Ось безопасности помогает организациям привести документы и
+              Радиус безопасности помогает организациям привести документы и
               процессы по пожарной безопасности в порядок. Работаем с компаниями
               разных сфер деятельности: офисами, складами, магазинами,
               производственными объектами и небольшими предприятиями.
@@ -440,7 +514,7 @@
               Согласно законодательству Республики Беларусь, руководитель любого
               предприятия несет личную ответственность за противопожарное
               состояние объектов. Для соблюдения законов и защиты от проверок
-              МЧС каждая компания обязана организовать противопожарный режим,
+              МЧС каждая организация обязана организовать противопожарный режим,
               назначить ответственных лиц, разработать инструкции и приказы,
               содержать оборудование в исправности, обучать персонал, вести
               журналы учета и проводить тренировки по эвакуации.
@@ -472,7 +546,7 @@
               <h3>Проводить тренировки</h3>
               <p>
                 Не реже одного раза в год отрабатывать с сотрудниками планы
-                эвакуации людей при пожаре.
+                эвакуации людей при пожаре(взрыве).
               </p>
             </article>
           </div>
@@ -720,8 +794,8 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <p>
-          © <span id="year"></span> Ось безопасности. Пожарная безопасность для
-          бизнеса.
+          © <span id="year"></span> Радиус безопасности. Пожарная безопасность
+          для бизнеса.
         </p>
         <a href="#top" data-scroll-top>Наверх</a>
       </div>

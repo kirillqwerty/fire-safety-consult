@@ -1,7 +1,7 @@
 (function () {
   const body = document.body;
   const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".header-menu");
+  const nav = document.getElementById("mainNav");
   const modal = document.getElementById("requestModal");
   const modalTitle = document.getElementById("modalTitle");
   const modalForm = document.getElementById("modalForm");
@@ -14,8 +14,14 @@
     telegramBotEndpoint: "",
   };
 
+  const mobileBreakpoint = 1180;
+
   if (year) {
     year.textContent = new Date().getFullYear();
+  }
+
+  function isMobileHeader() {
+    return window.innerWidth <= mobileBreakpoint;
   }
 
   function closeMobileNav() {
@@ -27,13 +33,26 @@
     body.classList.remove("mobile-menu-open");
   }
 
+  function openMobileNav() {
+    if (!burger || !nav || !isMobileHeader()) return;
+
+    nav.classList.add("show");
+    burger.classList.add("active");
+    burger.setAttribute("aria-expanded", "true");
+    body.classList.add("mobile-menu-open");
+  }
+
   if (burger && nav) {
     burger.addEventListener("click", function () {
-      const isOpen = nav.classList.toggle("show");
+      if (!isMobileHeader()) return;
 
-      burger.classList.toggle("active", isOpen);
-      burger.setAttribute("aria-expanded", String(isOpen));
-      body.classList.toggle("mobile-menu-open", isOpen);
+      const isOpen = nav.classList.contains("show");
+
+      if (isOpen) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
     });
 
     nav.querySelectorAll("a, button[data-modal]").forEach(function (element) {
@@ -43,11 +62,12 @@
     document.addEventListener("click", function (event) {
       if (!nav.classList.contains("show")) return;
       if (nav.contains(event.target) || burger.contains(event.target)) return;
+
       closeMobileNav();
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 1340) {
+      if (!isMobileHeader()) {
         closeMobileNav();
       }
     });
@@ -79,7 +99,9 @@
   });
 
   function openModal(type, serviceName) {
-    if (!modal || !modalForm) return;
+    if (!modal || !modalForm || !modalTitle) return;
+
+    closeMobileNav();
 
     modal.classList.remove("callback", "consultation");
     modal.classList.add(type === "callback" ? "callback" : "consultation");
@@ -130,6 +152,7 @@
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
       closeModal();
+      closeMobileNav();
     }
   });
 
